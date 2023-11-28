@@ -10,7 +10,7 @@ import event.EventMenuSelected;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JComponent;
-import raven.toast.Notifications;
+
 
 /**
  *
@@ -33,7 +33,7 @@ public class Main extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         
         
-        Notifications.getInstance().setJFrame(this);
+       
         setBackground(new Color(0, 0, 0, 0));
         home = new Home();
         form1 = new Form_1();
