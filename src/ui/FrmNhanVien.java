@@ -70,6 +70,8 @@ public class FrmNhanVien extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/coffee/icon/Cat.png"))); // NOI18N
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("QUẢN LÝ NHÂN VIÊN");
 
@@ -336,7 +338,7 @@ public class FrmNhanVien extends javax.swing.JFrame {
 
     private void txtTimKiemKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKiemKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-        timKiem();
+            timKiem();
         }
     }//GEN-LAST:event_txtTimKiemKeyPressed
 
@@ -477,22 +479,31 @@ public class FrmNhanVien extends javax.swing.JFrame {
     }
 
     void delete() {
-        if (!Auth.isManager()) {
-            MsgBox.alert(this, "Bạn không có quyền xóa nhân viên!");
+        if (utils.Auth.user != null) {
+            // Giả sử Auth.user là một thể hiện của entity.NhanVien
+            String maNV = utils.Auth.user.getMaNV();
+            // Thực hiện các thao tác với maNV
         } else {
-            String manv = txtMaNV.getText();
-            if (manv.equals(Auth.user.getMaNV())) {
-                MsgBox.alert(this, "Bạn không được xóa chính bạn!");
-            } else if (MsgBox.confirm(this, "Bạn thực sự muốn xóa nhân viên này?")) {
-                try {
-                    dao.delete(manv);
-                    this.fillTable();
-                    this.clearForm();
-                    MsgBox.alert(this, "Xóa thành công!");
-                } catch (Exception e) {
-                    MsgBox.alert(this, "Xóa thất bại!");
-                }
+            // Xử lý trường hợp khi Auth.user là null
+            System.out.println("Auth.user is null");
+        }
+
+//        if (!Auth.isManager()) {
+//            MsgBox.alert(this, "Bạn không có quyền xóa nhân viên!");
+//        } else {
+        String manv = txtMaNV.getText();
+        if (manv.equals(Auth.user.getMaNV())) {
+            MsgBox.alert(this, "Bạn không được xóa chính bạn!");
+        } else if (MsgBox.confirm(this, "Bạn thực sự muốn xóa nhân viên này?")) {
+            try {
+                dao.delete(manv);
+                this.fillTable();
+                this.clearForm();
+                MsgBox.alert(this, "Xóa thành công!");
+            } catch (Exception e) {
+                MsgBox.alert(this, "Xóa thất bại!");
             }
+//            }
         }
     }
 
@@ -544,8 +555,8 @@ public class FrmNhanVien extends javax.swing.JFrame {
         // Trạng thái form
         txtMaNV.setEditable(!edit);
         btnThem.setEnabled(!edit);
-        btnSua.setEnabled(edit);
-        btnXoa.setEnabled(edit);
+        btnSua.setEnabled(!edit);
+        btnXoa.setEnabled(!edit);
     }
 
     boolean isValidated() {
