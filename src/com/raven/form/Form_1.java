@@ -7,6 +7,11 @@ package com.raven.form;
 
 import dao.NhanVienDAO;
 import entity.NhanVien;
+import java.awt.Color;
+import java.awt.GradientPaint;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -103,13 +108,13 @@ public class Form_1 extends javax.swing.JPanel {
 
         tblNhanVien.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Mã NV", "Tên NV", "SDT", "Giới Tính", "Phân Quyền"
+                "Mã NV", "Tên NV", "SDT", "Giới Tính", "Phân Quyền", "Gmail"
             }
         ));
         tblNhanVien.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -331,7 +336,15 @@ public class Form_1 extends javax.swing.JPanel {
                         .addGap(36, 36, 36))))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+protected void paintChildren(Graphics grphcs) {
+        Graphics2D g2 = (Graphics2D) grphcs;
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        GradientPaint g = new GradientPaint(0, 0, Color.decode("#b29f94"), 0, getHeight(), Color.decode("#603813"));
+        g2.setPaint(g);
+        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
+        g2.fillRect(getWidth() - 20, 0, getWidth(), getHeight());
+        super.paintChildren(grphcs);
+    }
     private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
         this.clearForm();
     }//GEN-LAST:event_btnMoiActionPerformed
@@ -426,7 +439,7 @@ public class Form_1 extends javax.swing.JPanel {
                 Object[] row = {
                     nv.getMaNV(),
                     nv.getTenNV(),
-                    nv.getSDT(),
+                    nv.getSdt(),
                     nv.isGioitinh() ? "Nữ" : "Nam",
                     nv.isPhanquyen() ? "Trưởng phòng" : "Nhân viên"
                 };
@@ -507,7 +520,7 @@ public class Form_1 extends javax.swing.JPanel {
     void setForm(NhanVien nv) {
         txtMaNV.setText(nv.getMaNV());
         txtTenNV.setText(nv.getTenNV());
-        txtSDT.setText(nv.getSDT());
+        txtSDT.setText(nv.getSdt());
         rdoNhanVien.setSelected(nv.isPhanquyen());
         rdoTruongPhong.setSelected(nv.isPhanquyen());
         rdoNam.setSelected(!nv.isGioitinh());
@@ -518,9 +531,10 @@ public class Form_1 extends javax.swing.JPanel {
         NhanVien nv = new NhanVien();
         nv.setMaNV(txtMaNV.getText());
         nv.setTenNV(txtTenNV.getText());
-        nv.setSDT(txtSDT.getText());
+        nv.setSdt(txtSDT.getText());
         nv.setPhanquyen(rdoTruongPhong.isSelected());
         nv.setGioitinh(rdoNam.isSelected());
+        
         return nv;
     }
 
@@ -539,7 +553,7 @@ public class Form_1 extends javax.swing.JPanel {
             MsgBox.alert(this, "Không để trống mã nhân viên!");
         } else if (nv.getTenNV().length() == 0) {
             MsgBox.alert(this, "Không để trống họ và tên nhân viên!");
-        } else if (nv.getSDT().length() == 0) {
+        } else if (nv.getSdt().length() == 0) {
             MsgBox.alert(this, "Không để trống số điện thoại!");
         } else {
             return true;
