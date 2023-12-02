@@ -11,7 +11,7 @@ public class XJdbc {
     //private static String dburl="jdbc:sqlserver://localhost;database=QLCF";
     private static String dburl = "jdbc:sqlserver://localhost:1433;encrypt=true;trustServerCertificate=true;databaseName=QL_QuanCoffee";
     private static String username="sa";
-    private static String password="123";
+    private static String password="";
     
     /*
      * Nạp driver
