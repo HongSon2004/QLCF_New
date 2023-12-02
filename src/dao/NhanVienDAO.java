@@ -13,7 +13,7 @@ public class NhanVienDAO extends CofeDAO<NhanVien, String>{
         XJdbc.update(sql, 
                 model.getMaNV(), 
                 model.getTenNV(), 
-                model.getSDT(), 
+                model.getSdt(), 
                 model.isGioitinh(),
                 model.isPhanquyen());
     }
@@ -23,7 +23,7 @@ public class NhanVienDAO extends CofeDAO<NhanVien, String>{
         XJdbc.update(sql, 
                 model.getMaNV(), 
                 model.getTenNV(), 
-                model.getSDT(), 
+                model.getSdt(), 
                 model.isGioitinh(),
                 model.isPhanquyen());
     }
@@ -54,7 +54,7 @@ public class NhanVienDAO extends CofeDAO<NhanVien, String>{
                     NhanVien entity=new NhanVien();
                     entity.setMaNV(rs.getString("MaNV"));
                     entity.setTenNV(rs.getString("TenNV"));
-                    entity.setSDT(rs.getString("SDT"));
+                    entity.setSdt(rs.getString("SDT"));
                     entity.setGioitinh(rs.getBoolean("GioiTinh"));
                     entity.setPhanquyen(rs.getBoolean("PhanQuyen"));
                     list.add(entity);
