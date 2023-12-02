@@ -9,9 +9,9 @@ import java.sql.SQLException;
 public class XJdbc {
     private static String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
     //private static String dburl="jdbc:sqlserver://localhost;database=QLCF";
-    private static String dburl = "jdbc:sqlserver://localhost:1433;encrypt=true;trustServerCertificate=true;databaseName=QL_QuanCoffee";
+    private static String dburl = "jdbc:sqlserver://localhost:1433;encrypt=true;trustServerCertificate=true;databaseName=QLCF";
     private static String username="sa";
-    private static String password="123";
+    private static String password="171024";
     
     /*
      * Nạp driver
