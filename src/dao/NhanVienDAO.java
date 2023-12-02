@@ -75,4 +75,20 @@ public class NhanVienDAO extends CofeDAO<NhanVien, String>{
         String sql="SELECT * FROM NhanVien WHERE TenNV LIKE ?";
         return this.selectBySql(sql, "%"+keyword+"%");
     }
+    public boolean dangKy(String email, String matKhau) {
+        if (kiemTraEmailTonTai(email)) {
+            return false;
+        }
+
+        String sql = "INSERT INTO NhanVien (Email, MatKhau) VALUES (?, ?)";
+        XJdbc.update(sql, email, matKhau);
+
+        return true;
+    }
+
+    private boolean kiemTraEmailTonTai(String email) {
+        String sql = "SELECT COUNT(*) FROM NhanVien WHERE Email=?";
+        int count = (int) XJdbc.value(sql, email);
+        return count > 0;
+    }
 }
