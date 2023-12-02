@@ -76,16 +76,14 @@ public class NhanVienDAO extends CofeDAO<NhanVien, String>{
         return this.selectBySql(sql, "%"+keyword+"%");
     }
     public boolean dangKy(String email, String matKhau) {
-        // Kiểm tra xem email đã tồn tại hay chưa
         if (kiemTraEmailTonTai(email)) {
-            return false; // Email đã tồn tại, không thể đăng ký
+            return false;
         }
 
-        // Thêm dữ liệu đăng ký vào cơ sở dữ liệu
         String sql = "INSERT INTO NhanVien (Email, MatKhau) VALUES (?, ?)";
         XJdbc.update(sql, email, matKhau);
 
-        return true; // Đăng ký thành công
+        return true;
     }
 
     private boolean kiemTraEmailTonTai(String email) {
