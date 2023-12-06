@@ -1,27 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
-        <file>
-            <url>src/ui/Login.java</url>
-            <bookmark id="1">
-                <name/>
-                <line>141</line>
-                <key/>
-            </bookmark>
-        </file>
-    </editor-bookmarks>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group>
-            <file>file:/E:/PRO1041/CF/src/ui/Loading.java</file>
-=======
-<<<<<<< HEAD
-        <group/>
-=======
-        <group>
-            <file>file:/H:/DuAn1/QLCF_NEW/src/ui/Main.java</file>
->>>>>>> 5ce8da1908e2c80aaac850910ef0add3975e5c56
+            <file>file:/E:/PRO1041/CF/src/ui/Home.java</file>
         </group>
->>>>>>> e0ae313675ee5d45db2a9aed21845c69f1e2d03e
     </open-files>
 </project-private>
