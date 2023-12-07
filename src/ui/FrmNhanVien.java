@@ -42,6 +42,8 @@ public class FrmNhanVien extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -111,18 +113,22 @@ public class FrmNhanVien extends javax.swing.JFrame {
         lblPhanQuyen.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         lblPhanQuyen.setText("Phân quyền:");
 
+        buttonGroup1.add(rdoNhanVien);
         rdoNhanVien.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         rdoNhanVien.setText("Nhân viên");
 
+        buttonGroup1.add(rdoTruongPhong);
         rdoTruongPhong.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         rdoTruongPhong.setText("Trưởng phòng");
 
         lbGioitinh.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         lbGioitinh.setText("Giới tính:");
 
+        buttonGroup2.add(rdoNu);
         rdoNu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         rdoNu.setText("Nữ");
 
+        buttonGroup2.add(rdoNam);
         rdoNam.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         rdoNam.setText("Nam");
 
@@ -343,7 +349,7 @@ public class FrmNhanVien extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTimKiemKeyPressed
 
     private void tblNhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanVienMouseClicked
-        if (evt.getClickCount() == 2) {
+        if (evt.getClickCount() == 1) {
             this.row = tblNhanVien.getSelectedRow();
             this.edit();
         }
@@ -401,6 +407,8 @@ public class FrmNhanVien extends javax.swing.JFrame {
     private javax.swing.JButton btnThem;
     private javax.swing.JButton btnTimKiem;
     private javax.swing.JButton btnXoa;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -443,7 +451,7 @@ public class FrmNhanVien extends javax.swing.JFrame {
                 Object[] row = {
                     nv.getMaNV(),
                     nv.getTenNV(),
-                    nv.getSDT(),
+                    nv.getSdt(),
                     nv.isGioitinh() ? "Nữ" : "Nam",
                     nv.isPhanquyen() ? "Trưởng phòng" : "Nhân viên"
                 };
@@ -492,9 +500,9 @@ public class FrmNhanVien extends javax.swing.JFrame {
 //            MsgBox.alert(this, "Bạn không có quyền xóa nhân viên!");
 //        } else {
         String manv = txtMaNV.getText();
-        if (manv.equals(Auth.user.getMaNV())) {
-            MsgBox.alert(this, "Bạn không được xóa chính bạn!");
-        } else if (MsgBox.confirm(this, "Bạn thực sự muốn xóa nhân viên này?")) {
+//        if (manv.equals(Auth.user.getMaNV())) {
+//            MsgBox.alert(this, "Bạn không được xóa chính bạn!");
+        if (MsgBox.confirm(this, "Bạn thực sự muốn xóa nhân viên này?")) {
             try {
                 dao.delete(manv);
                 this.fillTable();
@@ -533,7 +541,7 @@ public class FrmNhanVien extends javax.swing.JFrame {
     void setForm(NhanVien nv) {
         txtMaNV.setText(nv.getMaNV());
         txtTenNV.setText(nv.getTenNV());
-        txtSDT.setText(nv.getSDT());
+        txtSDT.setText(nv.getSdt());
         rdoNhanVien.setSelected(nv.isPhanquyen());
         rdoTruongPhong.setSelected(nv.isPhanquyen());
         rdoNam.setSelected(!nv.isGioitinh());
@@ -544,7 +552,7 @@ public class FrmNhanVien extends javax.swing.JFrame {
         NhanVien nv = new NhanVien();
         nv.setMaNV(txtMaNV.getText());
         nv.setTenNV(txtTenNV.getText());
-        nv.setSDT(txtSDT.getText());
+        nv.setSdt(txtSDT.getText());
         nv.setPhanquyen(rdoTruongPhong.isSelected());
         nv.setGioitinh(rdoNam.isSelected());
         return nv;
@@ -553,10 +561,10 @@ public class FrmNhanVien extends javax.swing.JFrame {
     void updateStatus() {
         boolean edit = (this.row >= 0);
         // Trạng thái form
-        txtMaNV.setEditable(!edit);
-        btnThem.setEnabled(!edit);
-        btnSua.setEnabled(!edit);
-        btnXoa.setEnabled(!edit);
+        txtMaNV.setEditable(edit);
+        btnThem.setEnabled(edit);
+        btnSua.setEnabled(edit);
+        btnXoa.setEnabled(edit);
     }
 
     boolean isValidated() {
@@ -565,7 +573,7 @@ public class FrmNhanVien extends javax.swing.JFrame {
             MsgBox.alert(this, "Không để trống mã nhân viên!");
         } else if (nv.getTenNV().length() == 0) {
             MsgBox.alert(this, "Không để trống họ và tên nhân viên!");
-        } else if (nv.getSDT().length() == 0) {
+        } else if (nv.getSdt().length() == 0) {
             MsgBox.alert(this, "Không để trống số điện thoại!");
         } else {
             return true;

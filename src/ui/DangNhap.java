@@ -27,7 +27,7 @@ public class DangNhap extends javax.swing.JFrame {
     private Connection conn=null;
     public static String tenNV = "";
      private void kn() {
-        String url = "jdbc:sqlserver://localhost; databaseName=QLCF;username=sa;password=123";
+        String url = "jdbc:sqlserver://localhost; databaseName=QLCF;username=sa;password=171024";
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             conn = DriverManager.getConnection(url);
@@ -291,7 +291,7 @@ public class DangNhap extends javax.swing.JFrame {
         dao = new NhanVienDAO();
     }
     
-    NhanVienDAO dao = new NhanVienDAO();
+    dao.NhanVienDAO dao = new dao.NhanVienDAO();
 
     void dangNhap() {
        if(kiemtrarong())
