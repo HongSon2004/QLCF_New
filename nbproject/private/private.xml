@@ -2,6 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
             <file>file:/C:/Users/hongs/Downloads/QLCF%20new/src/com/raven/form/Form_3.java</file>
             <file>file:/C:/Users/hongs/Downloads/QLCF%20new/src/ui/FrmNhanVien.java</file>
@@ -15,5 +16,8 @@
             <file>file:/C:/Users/hongs/Downloads/QLCF%20new/src/utils/Auth.java</file>
             <file>file:/C:/Users/hongs/Downloads/QLCF%20new/src/ui/Home.java</file>
         </group>
+=======
+        <group/>
+>>>>>>> ef4ac969f85413283e658275e40f3192c58dde3e
     </open-files>
 </project-private>
