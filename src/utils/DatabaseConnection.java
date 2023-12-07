@@ -26,7 +26,7 @@ public class DatabaseConnection {
         String port = "1433";
         String database = "QLCF";
         String userName = "sa";
-        String password = "171024";
+        String password = "quangtuan1201";
         connection = DriverManager.getConnection("jdbc:sqlserver://" + server + ":" + port + ";databaseName=" + database + ";encrypt=true;trustServerCertificate=true", userName, password);
 
     }
