@@ -96,7 +96,7 @@ public class Form_3 extends javax.swing.JPanel {
     }
     public void init(){
         this.fillCBLoai();
-        lblNhanVien.setText(DangNhap.tenNV);
+//        lblNhanVien.setText(DangNhap.tenNV);
         lblThoiGian.setText(String.valueOf(new SimpleDateFormat("HH:mm:ss").format(new java.util.Date())));
         lblNgay.setText(String.valueOf(new SimpleDateFormat("EEEE dd/MM/yyyy").format(new java.util.Date())));
         Disabled();

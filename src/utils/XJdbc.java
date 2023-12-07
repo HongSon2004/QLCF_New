@@ -11,7 +11,11 @@ public class XJdbc {
     //private static String dburl="jdbc:sqlserver://localhost;database=QLCF";
     private static String dburl = "jdbc:sqlserver://localhost:1433;encrypt=true;trustServerCertificate=true;databaseName=QLCF";
     private static String username="sa";
-    private static String password="171024";
+
+    private static String password="quangtuan1201";
+
+   
+
     
     /*
      * Nạp driver

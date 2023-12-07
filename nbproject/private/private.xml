@@ -2,8 +2,26 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
+<<<<<<< HEAD
             <file>file:/H:/DuAn1/QLCF_NEW/src/ui/Main.java</file>
+=======
+            <file>file:/C:/Users/hongs/Downloads/QLCF%20new/src/com/raven/form/Form_3.java</file>
+            <file>file:/C:/Users/hongs/Downloads/QLCF%20new/src/ui/FrmNhanVien.java</file>
+            <file>file:/C:/Users/hongs/Downloads/QLCF%20new/src/dao/NhanVienDAO.java</file>
+            <file>file:/C:/Users/hongs/Downloads/QLCF%20new/src/entity/NhanVien.java</file>
+            <file>file:/C:/Users/hongs/Downloads/QLCF%20new/src/com/raven/form/Form_4.java</file>
+            <file>file:/C:/Users/hongs/Downloads/QLCF%20new/src/com/raven/form/Form_2.java</file>
+            <file>file:/C:/Users/hongs/Downloads/QLCF%20new/src/ui/Main.java</file>
+            <file>file:/C:/Users/hongs/Downloads/QLCF%20new/src/com/raven/form/Form_1.java</file>
+            <file>file:/C:/Users/hongs/Downloads/QLCF%20new/src/ui/DangKy.java</file>
+            <file>file:/C:/Users/hongs/Downloads/QLCF%20new/src/utils/Auth.java</file>
+            <file>file:/C:/Users/hongs/Downloads/QLCF%20new/src/ui/Home.java</file>
+>>>>>>> 09a768243aa860de0184941a1fdb969f4a5fb24a
         </group>
+=======
+        <group/>
+>>>>>>> ef4ac969f85413283e658275e40f3192c58dde3e
     </open-files>
 </project-private>

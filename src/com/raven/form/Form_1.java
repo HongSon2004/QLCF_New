@@ -356,7 +356,7 @@ protected void paintChildren(Graphics grphcs) {
     }//GEN-LAST:event_txtTimKiemKeyPressed
 
     private void tblNhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanVienMouseClicked
-        if (evt.getClickCount() == 2) {
+        if (evt.getClickCount() == 1) {
             this.row = tblNhanVien.getSelectedRow();
             this.edit();
         }
